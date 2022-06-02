@@ -17,20 +17,26 @@ let convertedNumKilo = 0;
 
 // Functions
 function meterFeet() {
-  convertedNumFeet = mainNumber * 3.281;
-  convertedNumMeter = mainNumber * 0.304;
-  meterSentence.textContent = `${mainNumber} meters = ${convertedNumFeet} feet | ${mainNumber} feet = ${convertedNumMeter} meters`;
+  convertedNumFeet = mainNumber * 3.28084;
+  convertedNumMeter = mainNumber * 0.3048;
+  meterSentence.textContent = `${mainNumber} meters = ${convertedNumFeet.toFixed(
+    3
+  )} feet | ${mainNumber} feet = ${convertedNumMeter.toFixed(3)} meters`;
 }
 
 function literGal() {
-  convertedNumGal = mainNumber * 0.264;
-  convertedNumLit = mainNumber * 3.785;
-  literGalSentence.textContent = `${mainNumber} liters = ${convertedNumGal} gallons | ${mainNumber} gallons = ${convertedNumLit} liters`;
+  convertedNumGal = mainNumber * 0.264172;
+  convertedNumLit = mainNumber * 3.78541;
+  literGalSentence.textContent = `${mainNumber} liters = ${convertedNumGal.toFixed(
+    3
+  )} gallons | ${mainNumber} gallons = ${convertedNumLit.toFixed(3)} liters`;
 }
 function kiloPounds() {
-  convertedNumPounds = mainNumber * 2.204;
-  convertedNumKilo = mainNumber * 0.453;
-  kiloPoundSentence.textContent = `${mainNumber} liters = ${convertedNumPounds} pounds | ${mainNumber} pounds = ${convertedNumKilo} kilos`;
+  convertedNumPounds = mainNumber * 2.20462;
+  convertedNumKilo = mainNumber * 0.453592;
+  kiloPoundSentence.textContent = `${mainNumber} liters = ${convertedNumPounds.toFixed(
+    3
+  )} pounds | ${mainNumber} pounds = ${convertedNumKilo.toFixed(3)} kilos`;
 }
 
 // Function calls
