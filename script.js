@@ -1,9 +1,10 @@
 // DOM Variables
-mainNumber = +document.getElementById("main-number").textContent;
+mainNumber = document.getElementById("main-number");
 numFeet = document.getElementById("num-feet");
 meterSentence = document.getElementById("meter-feet-sentence");
 literGalSentence = document.getElementById("liter-gal-sentence");
 kiloPoundSentence = document.getElementById("kilo-pound-sentence");
+submitBtn = document.getElementById("submitBtn");
 
 // Variables
 let convertedNumFeet = 0;
@@ -17,29 +18,43 @@ let convertedNumKilo = 0;
 
 // Functions
 function meterFeet() {
-  convertedNumFeet = mainNumber * 3.28084;
-  convertedNumMeter = mainNumber * 0.3048;
-  meterSentence.textContent = `${mainNumber} meters = ${convertedNumFeet.toFixed(
-    3
-  )} feet | ${mainNumber} feet = ${convertedNumMeter.toFixed(3)} meters`;
+  convertedNumFeet = mainNumber.value * 3.28084;
+  convertedNumMeter = mainNumber.value * 0.3048;
+  meterSentence.textContent = `${
+    mainNumber.value
+  } meters = ${convertedNumFeet.toFixed(3)} feet | ${
+    mainNumber.value
+  } feet = ${convertedNumMeter.toFixed(3)} meters`;
 }
 
 function literGal() {
-  convertedNumGal = mainNumber * 0.264172;
-  convertedNumLit = mainNumber * 3.78541;
-  literGalSentence.textContent = `${mainNumber} liters = ${convertedNumGal.toFixed(
-    3
-  )} gallons | ${mainNumber} gallons = ${convertedNumLit.toFixed(3)} liters`;
+  convertedNumGal = mainNumber.value * 0.264172;
+  convertedNumLit = mainNumber.value * 3.78541;
+  literGalSentence.textContent = `${
+    mainNumber.value
+  } liters = ${convertedNumGal.toFixed(3)} gallons | ${
+    mainNumber.value
+  } gallons = ${convertedNumLit.toFixed(3)} liters`;
 }
 function kiloPounds() {
-  convertedNumPounds = mainNumber * 2.20462;
-  convertedNumKilo = mainNumber * 0.453592;
-  kiloPoundSentence.textContent = `${mainNumber} liters = ${convertedNumPounds.toFixed(
-    3
-  )} pounds | ${mainNumber} pounds = ${convertedNumKilo.toFixed(3)} kilos`;
+  convertedNumPounds = mainNumber.value * 2.20462;
+  convertedNumKilo = mainNumber.value * 0.453592;
+  kiloPoundSentence.textContent = `${
+    mainNumber.value
+  } liters = ${convertedNumPounds.toFixed(3)} pounds | ${
+    mainNumber.value
+  } pounds = ${convertedNumKilo.toFixed(3)} kilos`;
 }
 
+// Event Listeners
+submitBtn.addEventListener("click", function () {
+  meterFeet();
+  literGal();
+  kiloPounds();
+  mainNumber.value = "";
+});
+
 // Function calls
-meterFeet();
-literGal();
-kiloPounds();
+// meterFeet();
+// literGal();
+// kiloPounds();
