@@ -5,6 +5,7 @@ meterSentence = document.getElementById("meter-feet-sentence");
 literGalSentence = document.getElementById("liter-gal-sentence");
 kiloPoundSentence = document.getElementById("kilo-pound-sentence");
 submitBtn = document.getElementById("submitBtn");
+errorMsg = document.getElementById("errorMsg");
 
 // Variables
 let convertedNumFeet = 0;
@@ -48,13 +49,13 @@ function kiloPounds() {
 
 // Event Listeners
 submitBtn.addEventListener("click", function () {
-  meterFeet();
-  literGal();
-  kiloPounds();
-  mainNumber.value = "";
+  if (mainNumber.value === "") {
+    errorMsg.textContent = "Please enter a number";
+  } else {
+    meterFeet();
+    literGal();
+    kiloPounds();
+    mainNumber.value = "";
+    errorMsg.textContent = "";
+  }
 });
-
-// Function calls
-// meterFeet();
-// literGal();
-// kiloPounds();

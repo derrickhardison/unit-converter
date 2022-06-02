@@ -8,16 +8,27 @@ p {
   padding: 0;
 }
 
-/* input {
-  width: 40%;
-} */
+input {
+  background: lightgray;
+  width: 50px;
+  padding: 5px 10px;
+}
 
-/* button {
-  align-items: center;
-  width: 25%;
-} */
+input:focus {
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
 
 #submitBtn {
+  margin-top: 25px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  background: #1f2937;
+  color: #fff;
 }
 
 #number-section {
@@ -59,5 +70,7 @@ p {
 }
 
 #number-section p {
-  font-size: 65px;
+  margin-top: 10px;
+  font-size: 25px;
+  color: #fff;
 }
